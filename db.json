@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "title": "рама гандон пидарас",
+      "completed": true,
+      "id": 1
+    },
+    {
+      "title": "привет Андрей ту ту ду",
+      "completed": true,
+      "id": 2
+    },
+    {
+      "title": "Салам алейкум уалейкум",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "title": "отсоси а потом отсасывай",
+      "completed": true,
+      "id": 4
+    },
+    {
+      "title": "Эмир",
+      "completed": true,
+      "id": 5
+    },
+    {
+      "title": "привет Олег",
+      "completed": false,
+      "id": 6
+    }
+  ]
+}
