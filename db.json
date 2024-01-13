@@ -24,11 +24,6 @@
       "title": "Эмир",
       "completed": true,
       "id": 5
-    },
-    {
-      "title": "привет Олег",
-      "completed": false,
-      "id": 6
     }
   ]
 }

@@ -13,4 +13,7 @@ abstract class TodoService extends GetxService {
     String title,
     bool completed,
   );
+  Future<void> deleteTodo(
+    int id,
+  );
 }

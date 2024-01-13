@@ -139,20 +139,34 @@ class HomeView extends GetView<HomeController> {
                   child: Text(todo.title),
                 ),
                 leading: Text(todo.id.toString()),
-                trailing: Checkbox(
-                  value: todo.completed,
-                  onChanged: (value) {
-                    Get.snackbar(
-                      'Статус задачи изменен',
-                      (value ?? false) ? 'Завершено' : 'Не завершено',
-                    );
-                    Get.log(todo.completed.toString());
-                    TodoService.to.updateTodo(
-                      todo.id,
-                      todo.title,
-                      todo.completed = value ?? false,
-                    );
-                  },
+                trailing: SizedBox(
+                  width: 96,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          TodoService.to.deleteTodo(todo.id);
+                        },
+                        icon: const Icon(Icons.delete),
+                      ),
+                      Checkbox(
+                        value: todo.completed,
+                        onChanged: (value) {
+                          Get.snackbar(
+                            'Статус задачи изменен',
+                            (value ?? false) ? 'Завершено' : 'Не завершено',
+                          );
+                          Get.log(todo.completed.toString());
+                          TodoService.to.updateTodo(
+                            todo.id,
+                            todo.title,
+                            todo.completed = value ?? false,
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
                 subtitle: Text(todo.completed ? 'Завершено' : 'Не завершено'),
                 onTap: () {

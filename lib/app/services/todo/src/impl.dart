@@ -51,4 +51,13 @@ class TodoServiceImpl extends TodoService {
 
     return data;
   }
+
+  @override
+  Future<void> deleteTodo(
+    int id,
+  ) async {
+    await dio.delete('/todos/$id');
+
+    todos.removeWhere((element) => element.id == id);
+  }
 }
