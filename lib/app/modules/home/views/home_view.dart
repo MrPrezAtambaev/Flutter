@@ -10,16 +10,39 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Get.isDarkMode;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TodoList'),
-        centerTitle: true,
+        title: ButtonBar(
+          children: [
+            ButtonBar(
+              children: [
+                IconButton(
+                  onPressed: () {
+                    isDarkMode = !isDarkMode;
+                    isDarkMode
+                        ? Get.changeTheme(ThemeData.dark())
+                        : Get.changeTheme(ThemeData.light());
+                  },
+                  icon: isDarkMode
+                      ? const Icon(Icons.dark_mode)
+                      : const Icon(Icons.light_mode),
+                ),
+              ],
+            ),
+            IconButton(
+                onPressed: () {
+                  Get.toNamed('/profile');
+                },
+                icon: const Icon(Icons.person)),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Get.bottomSheet(
             Container(
-              color: Colors.white,
+              color: isDarkMode ? Colors.black : Colors.white,
               padding: const EdgeInsets.symmetric(
                 horizontal: 20,
                 vertical: 20,
@@ -79,7 +102,7 @@ class HomeView extends GetView<HomeController> {
                   onTap: () {
                     Get.bottomSheet(
                       Container(
-                        color: Colors.white,
+                        color: isDarkMode ? Colors.black : Colors.white,
                         padding: const EdgeInsets.symmetric(
                           horizontal: 20,
                           vertical: 20,
@@ -125,7 +148,7 @@ class HomeView extends GetView<HomeController> {
                           ],
                         ),
                       ),
-                      backgroundColor: Colors.white,
+                      backgroundColor: isDarkMode ? Colors.black : Colors.white,
                       clipBehavior: Clip.hardEdge,
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
@@ -134,7 +157,6 @@ class HomeView extends GetView<HomeController> {
                         ),
                       ),
                     );
-                    Get.log(todo.title);
                   },
                   child: Text(todo.title),
                 ),

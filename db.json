@@ -12,18 +12,45 @@
     },
     {
       "title": "Салам алейкум уалейкум",
-      "completed": false,
+      "completed": true,
       "id": 3
     },
     {
       "title": "отсоси а потом отсасывай",
       "completed": true,
       "id": 4
+    }
+  ],
+  "profiles": [
+    {
+      "name": "Олег",
+      "age": 32,
+      "id": 1
     },
     {
-      "title": "Эмир",
-      "completed": true,
+      "name": "Азамат",
+      "age": 28,
+      "id": 2
+    },
+    {
+      "name": "Жума",
+      "age": 28,
+      "id": 3
+    },
+    {
+      "name": "Дастан",
+      "age": 27,
+      "id": 4
+    },
+    {
+      "name": "Эмир",
+      "age": 20,
       "id": 5
+    },
+    {
+      "name": "Акыл",
+      "age": 20,
+      "id": 6
     }
   ]
 }

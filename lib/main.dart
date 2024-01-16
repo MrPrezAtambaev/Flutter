@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:getx_todo/app/services/profile/profile_service.dart';
 import 'package:getx_todo/app/services/todo/todo_service.dart';
 import 'package:dio/dio.dart';
 
@@ -12,7 +13,8 @@ Future<void> initModules() async {
 
   Get
     ..put<Dio>(dio)
-    ..put<TodoService>(TodoServiceImpl());
+    ..put<TodoService>(TodoServiceImpl())
+    ..put<ProfileService>(ProfileServiceImpl());
 }
 
 void main() async {
@@ -20,7 +22,7 @@ void main() async {
 
   runApp(
     GetMaterialApp(
-      title: "Application",
+      title: "My first app",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),
